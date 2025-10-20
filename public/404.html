@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirection…</title>
+    <meta http-equiv="refresh" content="0; url=/" />
+    <script>
+      // Redirige toute URL profonde vers l'index pour le router côté client
+      (function() {
+        var l = window.location;
+        var p = l.pathname;
+        // préfixe repo GitHub Pages
+        var base = '/Devly2/';
+        if (!p.startsWith(base)) base = '/';
+        var target = base + (l.search || '') + (l.hash || '');
+        // replaceState évite une nouvelle entrée dans l'historique
+        window.history.replaceState(null, '', target);
+        window.location.replace(target);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
