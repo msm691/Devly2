@@ -31,11 +31,10 @@ export function Presentation() {
       {/* Animated Background */}
       <div className="absolute inset-0">
         <motion.div 
-          className="absolute top-20 right-20 w-64 h-64 bg-[#FFD700] rounded-full opacity-10 blur-3xl"
+          className="absolute top-20 right-20 w-64 h-64 bg-[#FFD700] rounded-full opacity-10 blur-2xl"
+          style={{ willChange: 'transform' }}
           animate={{
             scale: [1, 1.3, 1],
-            x: [0, 100, 0],
-            y: [0, -50, 0],
           }}
           transition={{
             duration: 15,
@@ -44,11 +43,10 @@ export function Presentation() {
           }}
         />
         <motion.div 
-          className="absolute bottom-20 left-20 w-72 h-72 bg-[#FFD700] rounded-full opacity-10 blur-3xl"
+          className="absolute bottom-20 left-20 w-72 h-72 bg-[#FFD700] rounded-full opacity-10 blur-2xl"
+          style={{ willChange: 'transform' }}
           animate={{
             scale: [1, 1.4, 1],
-            x: [0, -80, 0],
-            y: [0, 60, 0],
           }}
           transition={{
             duration: 18,
@@ -117,24 +115,24 @@ export function Presentation() {
           {/* Decorative circles */}
           <motion.div 
             className="absolute top-0 right-0 w-32 h-32 bg-[#1E5EFF] rounded-full opacity-10 -translate-y-1/2 translate-x-1/2"
+            style={{ willChange: 'transform' }}
             animate={{
-              scale: [1, 1.2, 1],
-              rotate: [0, 180, 360],
+              rotate: [0, 360],
             }}
             transition={{
-              duration: 20,
+              duration: 25,
               repeat: Infinity,
               ease: "linear"
             }}
           />
           <motion.div 
             className="absolute bottom-0 left-0 w-24 h-24 bg-[#1E5EFF] rounded-full opacity-10 translate-y-1/2 -translate-x-1/2"
+            style={{ willChange: 'transform' }}
             animate={{
-              scale: [1, 1.3, 1],
-              rotate: [360, 180, 0],
+              rotate: [360, 0],
             }}
             transition={{
-              duration: 25,
+              duration: 30,
               repeat: Infinity,
               ease: "linear"
             }}

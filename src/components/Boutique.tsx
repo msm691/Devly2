@@ -163,10 +163,10 @@ export function Boutique({ addToCart }: BoutiqueProps) {
       {/* Animated Background */}
       <div className="absolute inset-0">
         <motion.div 
-          className="absolute top-40 left-10 w-72 h-72 bg-[#FFD700] rounded-full opacity-10 blur-3xl"
+          className="absolute top-40 left-10 w-72 h-72 bg-[#FFD700] rounded-full opacity-10 blur-2xl"
+          style={{ willChange: 'transform' }}
           animate={{
-            scale: [1, 1.5, 1],
-            x: [0, 50, 0],
+            scale: [1, 1.4, 1],
           }}
           transition={{
             duration: 20,
@@ -175,10 +175,10 @@ export function Boutique({ addToCart }: BoutiqueProps) {
           }}
         />
         <motion.div 
-          className="absolute bottom-40 right-10 w-80 h-80 bg-[#FFD700] rounded-full opacity-10 blur-3xl"
+          className="absolute bottom-40 right-10 w-80 h-80 bg-[#FFD700] rounded-full opacity-10 blur-2xl"
+          style={{ willChange: 'transform' }}
           animate={{
-            scale: [1, 1.4, 1],
-            x: [0, -60, 0],
+            scale: [1, 1.3, 1],
           }}
           transition={{
             duration: 22,
