@@ -5,33 +5,10 @@ import { motion } from 'motion/react';
 export function Contact() {
   return (
     <section id="contact" className="py-20 bg-gradient-to-br from-[#0D3FCC] via-[#1E5EFF] to-[#0D3FCC] relative overflow-hidden">
-      {/* Animated Background */}
+      {/* Static Background */}
       <div className="absolute inset-0">
-        <motion.div 
-          className="absolute top-20 left-20 w-80 h-80 bg-[#FFD700] rounded-full opacity-10 blur-2xl"
-          style={{ willChange: 'transform' }}
-          animate={{
-            scale: [1, 1.4, 1],
-          }}
-          transition={{
-            duration: 18,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div 
-          className="absolute bottom-20 right-20 w-72 h-72 bg-[#FFD700] rounded-full opacity-10 blur-2xl"
-          style={{ willChange: 'transform' }}
-          animate={{
-            scale: [1, 1.3, 1],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1
-          }}
-        />
+        <div className="absolute top-20 left-20 w-80 h-80 bg-[#FFD700] rounded-full opacity-10 blur-2xl"></div>
+        <div className="absolute bottom-20 right-20 w-72 h-72 bg-[#FFD700] rounded-full opacity-10 blur-2xl"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -151,18 +128,7 @@ export function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <motion.div 
-            className="absolute top-0 right-0 w-32 h-32 bg-[#1E5EFF] rounded-full opacity-20 -translate-y-1/2 translate-x-1/2"
-            style={{ willChange: 'transform' }}
-            animate={{
-              rotate: [0, 360],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-          />
+          <div className="absolute top-0 right-0 w-32 h-32 bg-[#1E5EFF] rounded-full opacity-20 -translate-y-1/2 translate-x-1/2"></div>
           <div className="relative z-10">
             <h3 className="mb-4">Prêt à démarrer votre projet ?</h3>
             <p className="mb-6">

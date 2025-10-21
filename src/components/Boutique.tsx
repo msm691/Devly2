@@ -160,33 +160,10 @@ export function Boutique({ addToCart }: BoutiqueProps) {
 
   return (
     <section id="boutique" className="py-20 bg-gradient-to-br from-[#0D3FCC] via-[#1E5EFF] to-[#0D3FCC] relative overflow-hidden">
-      {/* Animated Background */}
+      {/* Static Background */}
       <div className="absolute inset-0">
-        <motion.div 
-          className="absolute top-40 left-10 w-72 h-72 bg-[#FFD700] rounded-full opacity-10 blur-2xl"
-          style={{ willChange: 'transform' }}
-          animate={{
-            scale: [1, 1.4, 1],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div 
-          className="absolute bottom-40 right-10 w-80 h-80 bg-[#FFD700] rounded-full opacity-10 blur-2xl"
-          style={{ willChange: 'transform' }}
-          animate={{
-            scale: [1, 1.3, 1],
-          }}
-          transition={{
-            duration: 22,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1
-          }}
-        />
+        <div className="absolute top-40 left-10 w-72 h-72 bg-[#FFD700] rounded-full opacity-10 blur-2xl"></div>
+        <div className="absolute bottom-40 right-10 w-80 h-80 bg-[#FFD700] rounded-full opacity-10 blur-2xl"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">

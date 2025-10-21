@@ -5,85 +5,13 @@ import { motion } from 'motion/react';
 export function Hero() {
   return (
     <section id="accueil" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0D3FCC] via-[#1E5EFF] to-[#0D3FCC]">
-      {/* Animated Background Elements */}
-      <motion.div 
-        className="absolute top-20 right-20 w-32 h-32 bg-[#FFD700] rounded-full opacity-30 blur-2xl"
-        style={{ willChange: 'transform, opacity' }}
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
-      <motion.div 
-        className="absolute bottom-20 left-20 w-40 h-40 bg-[#FFD700] rounded-full opacity-30 blur-2xl"
-        style={{ willChange: 'transform, opacity' }}
-        animate={{
-          scale: [1, 1.3, 1],
-          opacity: [0.3, 0.6, 0.3],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1
-        }}
-      />
+      {/* Static Background Elements */}
+      <div className="absolute top-20 right-20 w-32 h-32 bg-[#FFD700] rounded-full opacity-20 blur-2xl"></div>
+      <div className="absolute bottom-20 left-20 w-40 h-40 bg-[#FFD700] rounded-full opacity-20 blur-2xl"></div>
       
-      {/* Animated Geometric Shapes */}
-      <motion.div 
-        className="absolute top-32 right-1/4 w-0 h-0 border-l-[50px] border-l-transparent border-r-[50px] border-r-transparent border-b-[80px] border-b-[#FFD700] opacity-40"
-        style={{ willChange: 'transform' }}
-        animate={{
-          rotate: [12, 192, 12],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-      />
-      <motion.div 
-        className="absolute bottom-32 left-1/3 w-24 h-24 border-4 border-[#FFD700]/50 rounded-full"
-        style={{ willChange: 'transform, opacity' }}
-        animate={{
-          scale: [1, 1.3, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 12,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
+
       
-      {/* Floating Particles */}
-      {[...Array(3)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-2 h-2 bg-[#FFD700] rounded-full"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            willChange: 'transform, opacity',
-          }}
-          animate={{
-            y: [0, -100, 0],
-            opacity: [0, 1, 0],
-            scale: [0, 1, 0],
-          }}
-          transition={{
-            duration: 3 + Math.random() * 2,
-            repeat: Infinity,
-            delay: Math.random() * 2,
-            ease: "easeInOut"
-          }}
-        />
-      ))}
+
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center text-white">

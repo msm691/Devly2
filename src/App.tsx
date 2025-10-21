@@ -96,38 +96,18 @@ export default function App() {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
-          <motion.div 
-            className="flex items-center gap-2"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <motion.div 
-              className="w-10 h-10 rounded-full bg-[#FFD700] flex items-center justify-center shadow-lg"
-              whileHover={{ 
-                rotate: 360,
-                scale: 1.1,
-              }}
-              transition={{ duration: 0.6 }}
-            >
+          <div className="flex items-center gap-2">
+            <div className="w-10 h-10 rounded-full bg-[#FFD700] flex items-center justify-center shadow-lg">
               <span className="text-[#1E5EFF]">&lt;/&gt;</span>
-            </motion.div>
-            <motion.span 
-              className="text-white"
-              whileHover={{ scale: 1.05 }}
-            >
+            </div>
+            <span className="text-white">
               DevLy
-            </motion.span>
-          </motion.div>
+            </span>
+          </div>
           
-          <motion.div 
-            className="hidden md:flex items-center gap-8"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            {['accueil', 'presentation', 'boutique', 'faq', 'contact'].map((item, index) => (
-              <motion.a
+          <div className="hidden md:flex items-center gap-8">
+            {['accueil', 'presentation', 'boutique', 'faq', 'contact'].map((item) => (
+              <a
                 key={item}
                 href={`#${item}`}
                 onClick={(e) => {
@@ -140,85 +120,40 @@ export default function App() {
                     });
                   }
                 }}
-                className="text-white/90 hover:text-[#FFD700] transition-all duration-300 relative cursor-pointer"
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
-                whileHover={{ 
-                  scale: 1.1,
-                  y: -2,
-                }}
-                whileTap={{ scale: 0.95 }}
+                className="text-white/90 hover:text-[#FFD700] transition-colors duration-300 cursor-pointer"
               >
                 {item.charAt(0).toUpperCase() + item.slice(1)}
-                <motion.div
-                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#FFD700]"
-                  initial={{ scaleX: 0 }}
-                  whileHover={{ scaleX: 1 }}
-                  transition={{ duration: 0.3 }}
-                />
-              </motion.a>
+              </a>
             ))}
-          </motion.div>
+          </div>
 
           <div className="flex items-center gap-3">
             {/* Mobile Menu Button */}
-            <motion.div
-              className="md:hidden"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <motion.div
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+            <div className="md:hidden">
+              <Button
+                onClick={() => setIsMobileMenuOpen(true)}
+                variant="ghost"
+                size="icon"
+                className="text-white hover:text-[#FFD700] hover:bg-white/10"
               >
-                <Button
-                  onClick={() => setIsMobileMenuOpen(true)}
-                  variant="ghost"
-                  size="icon"
-                  className="text-white hover:text-[#FFD700] hover:bg-white/10"
-                >
-                  <Menu className="h-6 w-6" />
-                </Button>
-              </motion.div>
-            </motion.div>
+                <Menu className="h-6 w-6" />
+              </Button>
+            </div>
 
             {/* Cart Button */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+            <Button
+              onClick={() => setIsCartOpen(true)}
+              variant="outline"
+              size="icon"
+              className="relative border-[#FFD700] text-[#FFD700] hover:bg-[#FFD700] hover:text-[#1E5EFF] transition-colors duration-300 shadow-lg"
             >
-              <motion.div
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <Button
-                  onClick={() => setIsCartOpen(true)}
-                  variant="outline"
-                  size="icon"
-                  className="relative border-[#FFD700] text-[#FFD700] hover:bg-[#FFD700] hover:text-[#1E5EFF] transition-all duration-300 shadow-lg"
-                >
-                  <motion.div
-                    animate={cartItemCount > 0 ? { rotate: [0, -10, 10, -10, 0] } : {}}
-                    transition={{ duration: 0.5 }}
-                  >
-                    <ShoppingCart className="h-5 w-5" />
-                  </motion.div>
-                  {cartItemCount > 0 && (
-                    <motion.span 
-                      className="absolute -top-2 -right-2 bg-[#FFD700] text-[#1E5EFF] rounded-full w-6 h-6 flex items-center justify-center text-xs"
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ type: "spring", stiffness: 500, damping: 15 }}
-                    >
-                      {cartItemCount}
-                    </motion.span>
-                  )}
-                </Button>
-              </motion.div>
-            </motion.div>
+              <ShoppingCart className="h-5 w-5" />
+              {cartItemCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-[#FFD700] text-[#1E5EFF] rounded-full w-6 h-6 flex items-center justify-center text-xs">
+                  {cartItemCount}
+                </span>
+              )}
+            </Button>
           </div>
         </div>
       </motion.nav>
@@ -236,25 +171,14 @@ export default function App() {
           </SheetHeader>
 
           <div className="flex flex-col gap-6 mt-12">
-            {['accueil', 'presentation', 'boutique', 'faq', 'contact'].map((item, index) => (
-              <motion.button
+            {['accueil', 'presentation', 'boutique', 'faq', 'contact'].map((item) => (
+              <button
                 key={item}
                 onClick={() => handleNavClick(item)}
-                className="text-left text-white/90 hover:text-[#FFD700] transition-all duration-300 relative group py-3 px-4 rounded-lg hover:bg-white/10"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                whileHover={{ x: 10 }}
-                whileTap={{ scale: 0.95 }}
+                className="text-left text-white/90 hover:text-[#FFD700] transition-colors duration-300 py-3 px-4 rounded-lg hover:bg-white/10"
               >
                 <span className="text-xl">{item.charAt(0).toUpperCase() + item.slice(1)}</span>
-                <motion.div
-                  className="absolute bottom-2 left-4 right-4 h-0.5 bg-[#FFD700]"
-                  initial={{ scaleX: 0, originX: 0 }}
-                  whileHover={{ scaleX: 1 }}
-                  transition={{ duration: 0.3 }}
-                />
-              </motion.button>
+              </button>
             ))}
           </div>
 
@@ -297,11 +221,6 @@ export default function App() {
 
       {/* Footer */}
       <footer className="bg-gradient-to-br from-[#0D3FCC] to-[#1E5EFF] text-white py-12 relative overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-32 h-32 bg-[#FFD700] rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-10 right-10 w-40 h-40 bg-[#FFD700] rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>

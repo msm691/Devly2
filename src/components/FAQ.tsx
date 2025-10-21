@@ -52,32 +52,10 @@ export function FAQ() {
 
   return (
     <section id="faq" className="py-20 bg-gradient-to-br from-[#1E5EFF] via-[#0D3FCC] to-[#1E5EFF] relative overflow-hidden">
-      {/* Animated Background */}
+      {/* Static Background */}
       <div className="absolute inset-0">
-        <motion.div 
-          className="absolute top-32 right-32 w-64 h-64 bg-[#FFD700] rounded-full opacity-10 blur-2xl"
-          style={{ willChange: 'transform' }}
-          animate={{
-            scale: [1, 1.3, 1],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div 
-          className="absolute bottom-32 left-32 w-72 h-72 bg-[#FFD700] rounded-full opacity-10 blur-2xl"
-          style={{ willChange: 'transform' }}
-          animate={{
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 30,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
+        <div className="absolute top-32 right-32 w-64 h-64 bg-[#FFD700] rounded-full opacity-10 blur-2xl"></div>
+        <div className="absolute bottom-32 left-32 w-72 h-72 bg-[#FFD700] rounded-full opacity-10 blur-2xl"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
