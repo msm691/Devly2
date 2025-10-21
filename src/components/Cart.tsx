@@ -143,7 +143,7 @@ export function Cart({ isOpen, onClose, cart, removeFromCart, updateQuantity }: 
                   <div>
                     <p className="text-[#1E5EFF] mb-1">
                       {isCopied ? (
-                        <span className="text-green-600">✓ Bon de commande copié ! Merci de nous le transmettre sur Instagram !</span>
+                        <span className="text-green-600">✓ Bon de commande copié ! Merci de nous le transmettre sur Instagram.</span>
                       ) : (
                         'Comment commander ?'
                       )}
